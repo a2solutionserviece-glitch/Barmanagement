@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login – Bar Management</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+			background: url('/static/img/bar_bg.jpg') no-repeat center center fixed;
+			background-size: cover;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Segoe UI", sans-serif;
+			}
+
+
+        .login-box {
+            width: 380px;
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 15px;
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            animation: fadeIn 0.8s ease;
+            color: #eee;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-box h3 {
+            text-align: center;
+            color: #ffcc66;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background: rgba(255,255,255,0.2);
+            box-shadow: none;
+            color: #fff;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background: #ffcc66;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #000;
+            transition: 0.2s;
+        }
+
+        .btn-login:hover {
+            background: #f4b93a;
+        }
+
+        .icon-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-box i {
+            font-size: 55px;
+            color: #ffcc66;
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="login-box">
+
+    <div class="icon-box">
+        <i class="fa-solid fa-whiskey-glass"></i>
+    </div>
+
+    <h3>HOTEL YERMALA</h3>
+
+    {# --- FLASH MESSAGES --- #}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div id="flash-container" style="width:100%; margin-bottom:10px;">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} fade show" role="alert"
+             style="padding:8px; font-size:14px; border-radius:8px; margin-bottom:6px;">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+    <form method="POST">
+
+        <label>Username</label>
+        <input type="text" class="form-control mb-3" name="username" required>
+
+        <label>Password</label>
+        <input type="password" class="form-control mb-3" name="password" required>
+
+        <button class="btn-login mt-1">LOGIN</button>
+    </form>
+
+</div>
+
+<script>
+setTimeout(() => {
+    const fc = document.getElementById("flash-container");
+    if(fc){
+        fc.style.transition = "opacity 0.8s ease";
+        fc.style.opacity = "0";
+        setTimeout(() => fc.remove(), 800);
+    }
+}, 2500);
+</script>
+
+</body>
+</html>
