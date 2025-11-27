@@ -1,0 +1,260 @@
+/* ------------------------------
+   GLOBAL
+------------------------------ */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0f19;
+    color: #e5e5e5;
+}
+
+/* Royal Blue Colors */
+:root {
+    --primary: #0d6efd;
+    --primary-light: #5ea8ff;
+    --primary-dark: #0a58ca;
+    --sidebar-bg: #0a0e17;
+    --card-bg: rgba(255,255,255,0.05);
+    --border-color: rgba(255,255,255,0.07);
+}
+
+/* ------------------------------
+   SIDEBAR
+------------------------------ */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    background: var(--sidebar-bg);
+    padding-top: 20px;
+    color: #ddd;
+    box-shadow: 3px 0 15px rgba(0,0,0,0.6);
+}
+
+.sidebar-header {
+    font-size: 20px;
+    padding: 18px 20px;
+    margin-bottom: 8px;
+    color: var(--primary-light);
+}
+
+.sidebar-link {
+    display: block;
+    padding: 12px 20px;
+    font-size: 15px;
+    color: #9ba3b4;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: 0.2s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: rgba(13,110,253,0.12);
+    border-left: 4px solid var(--primary);
+    color: #fff;
+}
+
+.sidebar-divider {
+    border-color: #444;
+    margin: 15px 0;
+}
+
+/* ------------------------------
+   TOP BAR
+------------------------------ */
+.top-nav {
+    background: #101522;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.top-nav .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ------------------------------
+   MAIN
+------------------------------ */
+.main-content {
+    margin-left: 240px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ------------------------------
+   CARDS
+------------------------------ */
+.card-modern {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+    color: #e5e5e5;
+}
+
+/* POS item cards */
+.pos-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 12px;
+    transition: 0.15s;
+}
+
+.pos-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 18px rgba(13,110,253,0.35);
+    border-color: var(--primary-light);
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+.btn-gold,
+.btn-primary,
+.btn-blue {
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.btn-gold:hover,
+.btn-primary:hover,
+.btn-blue:hover {
+    background: var(--primary-dark);
+}
+
+/* Outline Button */
+.btn-outline-light:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ------------------------------
+   INPUTS / FORMS
+------------------------------ */
+.card-modern input,
+.card-modern select {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #fff;
+}
+
+.card-modern input:focus,
+.card-modern select:focus {
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.4);
+    color: #fff;
+}
+
+/* POS Search Bar */
+#posSearch {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+#posSearch:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+}
+
+/* ------------------------------
+   TABS
+------------------------------ */
+.nav-tabs .nav-link {
+    color: #9ba3b4;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    background: var(--primary);
+    color: white;
+    border-radius: 6px 6px 0 0;
+    border: none;
+}
+
+/* ------------------------------
+   TABLES
+------------------------------ */
+.table-dark {
+    background: rgba(255,255,255,0.05) !important;
+}
+
+.table-dark tbody tr:hover {
+    background: rgba(13,110,253,0.12);
+}
+
+/* ------------------------------
+   TABLES DASHBOARD
+------------------------------ */
+.table-card {
+    width: 150px;
+    padding: 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.table-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-light);
+    box-shadow: 0 5px 18px rgba(13,110,253,0.3);
+}
+
+.table-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-light);
+}
+
+.table-status.free { background:#30c48b; padding:3px 6px; border-radius:6px; }
+.table-status.occupied { background:#ff6b6b; padding:3px 6px; border-radius:6px; }
+.table-status.reserved { background:#ffd166; color:#000; padding:3px 6px; border-radius:6px; }
+
+/* ------------------------------
+   PARCEL TOKENS
+------------------------------ */
+.token-card {
+    background: #13233c;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.15s;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.token-card:hover {
+    background: #1c3458;
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+}
+
+/* ------------------------------
+   SCROLLBARS
+------------------------------ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+}
